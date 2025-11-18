@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro — Voluntário / Doador</title>
+  <meta name="description" content="Formulário de cadastro para voluntários e doadores. Campos obrigatórios, validação HTML5 e máscaras." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="assets/logos/logo.svg" alt="Logo ONG Exemplo" /></a>
+      <nav class="main-nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Cadastro</h1>
+    <p>Preencha os dados para se candidatar como voluntário ou apoiar como doador. Campos com <abbr title="Obrigatório">*</abbr> são obrigatórios.</p>
+
+    <form id="cadastroForm" action="#" method="post" novalidate>
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+        <input id="nome" name="nome" type="text" required minlength="3" aria-required="true" />
+
+        <label for="email">E-mail <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" required aria-required="true" />
+
+        <label for="cpf">CPF <span aria-hidden="true">*</span></label>
+        <input id="cpf" name="cpf" type="text" inputmode="numeric" required aria-required="true" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" />
+
+        <label for="telefone">Telefone</label>
+        <input id="telefone" name="telefone" type="tel" inputmode="tel" maxlength="15" placeholder="(00) 00000-0000" />
+
+        <label for="nascimento">Data de nascimento</label>
+        <input id="nascimento" name="nascimento" type="date" max="2007-12-31" />
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <label for="cep">CEP <span aria-hidden="true">*</span></label>
+        <input id="cep" name="cep" type="text" inputmode="numeric" required maxlength="9" placeholder="00000-000" />
+
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text" />
+
+        <label for="cidade">Cidade</label>
+        <input id="cidade" name="cidade" type="text" />
+
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado" >
+          <option value="">Selecione</option>
+          <option value="SP">SP</option>
+          <option value="RJ">RJ</option>
+          <option value="MG">MG</option>
+          <!-- completar os estados -->
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Interesse</legend>
+        <label for="perfil">Quero me cadastrar como</label>
+        <select id="perfil" name="perfil">
+          <option value="voluntario">Voluntário</option>
+          <option value="doador">Doador</option>
+          <option value="parceiro">Parceiro</option>
+        </select>
+
+        <label for="mensagem">Mensagem (opcional)</label>
+        <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit">Enviar cadastro</button>
+        <button type="reset" class="outline">Limpar</button>
+      </div>
+
+      <div id="formFeedback" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; ONG Exemplo</p>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>
